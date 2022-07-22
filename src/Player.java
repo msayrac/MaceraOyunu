@@ -62,17 +62,7 @@ public class Player {
     }
 
     public void initPlayer(GameChar gameChar){
-// plaeyer için deneme eklendl
-        // *****************************
-        // *****************************// *****************************
-        // *****************************
-        // *****************************
 
-
-
-
-
-        // *****
         this.setDamage(gameChar.getDamage());
         this.setHealth(gameChar.getHealth());
         this.setMoney(gameChar.getMoney());
