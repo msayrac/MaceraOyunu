@@ -5,6 +5,16 @@ public class Player {
     private int damage;
     private int health;
     private int money;
+    private String charName;
+    private String name;
+    Scanner input = new Scanner(System.in);
+    private Inventory inventory;
+
+    public Player(String name) {
+
+        this.name = name;
+        this.inventory=new Inventory();
+    }
 
     public String getCharName() {
         return charName;
@@ -14,14 +24,9 @@ public class Player {
         this.charName = charName;
     }
 
-    private String charName;
-    private String name;
 
-    Scanner input = new Scanner(System.in);
 
-    public Player(String name) {
-        this.name = name;
-    }
+
 
     public void selectChar() {
 
@@ -56,10 +61,13 @@ public class Player {
             default:
                 initPlayer(new Samurai());
         }
-        System.out.println("Karakter : "+ this.getCharName()+ ", "
+        /* System.out.println("Karakter : "+ this.getCharName()+ ", "
                 + "Hasar : "+ this.getHealth() +", "+ "Saglik : "
                 + this.getHealth() + ", "+ "Para : "+ this.getMoney());
+
+                */
     }
+
 
     public void initPlayer(GameChar gameChar){
 
@@ -69,9 +77,18 @@ public class Player {
         this.setCharName(gameChar.getName());
     }
 
+    public void printInfo(){
+
+        System.out.println("Silahiniz :" + this.getInventory().getWeapon().getName() +
+                ", Hasariniz : "+ this.getDamage() +
+                ", Saglik : " + this.getHealth() +
+                ", Para : " + this.getMoney());
+
+
+    }
 
     public int getDamage() {
-        return damage;
+        return damage+this.getInventory().getWeapon().getDamage();
     }
 
     public void setDamage(int damage) {
@@ -100,5 +117,13 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
     }
 }
