@@ -26,12 +26,17 @@ public class Game {
             System.out.println("Bolgeler");
             System.out.println("");
             System.out.println("1- Guvenli Ev --> Burasi sizin icin guvenli bir ev, dusman yoktur");
-            System.out.println("2- Magaza --> Silay ya da zırh alabilirsiniz");
+            System.out.println("2- Magaza --> Silah ya da zirh alabilirsiniz");
+            System.out.println("0- Cikis Yap ! --> Oyunu sonlandir");
             System.out.println("Lutfen Gitmek Istediginiz bolgeyi seciniz : ");
 
             int selectLoc = input.nextInt();
 
             switch (selectLoc){
+                case 0 :
+                    location = null;
+                    break;
+
                 case 1 :
                     location = new SafeHouse(player);
                     break;
@@ -40,6 +45,11 @@ public class Game {
                     break;
                 default :
                     location = new SafeHouse(player);
+            }
+
+            if(location == null){
+                System.out.println("Bu karanlik ve sisli adadan cabuk vazgectin ! ");
+                break;
             }
            if(!location.onLocation()){
                System.out.println("GAME OVER!");
