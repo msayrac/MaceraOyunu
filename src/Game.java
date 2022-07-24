@@ -26,7 +26,10 @@ public class Game {
             System.out.println("Bolgeler");
             System.out.println("");
             System.out.println("1- Guvenli Ev --> Burasi sizin icin guvenli bir ev, dusman yoktur");
-            System.out.println("2- Magaza --> Silah ya da zirh alabilirsiniz");
+            System.out.println("2- ToolStore --> Silah ya da zirh alabilirsiniz");
+            System.out.println("3- Magara --> Odul <Yemek> Dikkali ol karsina Zombi cikabilir!");
+            System.out.println("4- Orman --> Odul <Odun> Dikkali ol karsina Vampir cikabilir!");
+            System.out.println("5- Nehir --> Odul <Su> Dikkali ol karsina Ayi cikabilir!");
             System.out.println("0- Cikis Yap ! --> Oyunu sonlandir");
             System.out.println("Lutfen Gitmek Istediginiz bolgeyi seciniz : ");
 
@@ -43,8 +46,17 @@ public class Game {
                 case 2 :
                     location = new ToolStore(player);
                     break;
+                case 3 :
+                    location = new Cave(player);
+                    break;
+                case 4 :
+                    location = new Forest(player);
+                    break;
+                case 5 :
+                    location = new River(player);
+                    break;
                 default :
-                    location = new SafeHouse(player);
+                    System.out.println("Lutfen gecerli bir bolge giriniz ! ");
             }
 
             if(location == null){
