@@ -14,7 +14,7 @@ public class Game {
 
         System.out.println("Sayin " + player.getName() + " bu karanlik ve sisli adaya hosgeldiniz ! Burada yasananlarin hepsi gercek !");
         System.out.println("Lutfen bir karakter seciniz.");
-
+        System.out.println("--------------------");
         player.selectChar();
 
         Location location = null;
